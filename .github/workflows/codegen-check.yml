@@ -12,7 +12,6 @@ on:
       - 'docs/api/openapi.yaml'
       - 'packages/api-client/**'
       - 'scripts/check-codegen.py'
-  workflow_dispatch:
 
 jobs:
   contract:
