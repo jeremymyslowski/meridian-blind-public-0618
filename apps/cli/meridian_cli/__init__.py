@@ -1,1 +1,0 @@
-"""Meridian CLI package."""
