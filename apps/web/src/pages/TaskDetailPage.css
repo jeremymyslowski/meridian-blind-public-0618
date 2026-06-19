@@ -1,0 +1,94 @@
+.task-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.task-detail-header h1 {
+  margin: 0;
+}
+
+.viewer-notice {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.attachments-section {
+  margin-bottom: 2rem;
+}
+
+.attachments-section h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.attachment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem !important;
+}
+
+.attachment-meta {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.task-description {
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.comments-section h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.comment-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.comment-form .btn-primary {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comment {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.comment-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.comment-meta time {
+  color: #9ca3af;
+}
+
+.comment p {
+  margin: 0;
+}

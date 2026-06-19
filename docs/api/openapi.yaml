@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: Meridian API
+  version: 0.2.0
+  description: Team collaboration platform API
+
+servers:
+  - url: http://localhost:8000
+    description: Local development
+
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: Login
+      tags: [auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+      responses:
+        '200':
+          description: Successful login
+
+  /api/v1/auth/register:
+    post:
+      summary: Register
+      tags: [auth]
+
+  /api/v1/projects:
+    get:
+      summary: List projects
+      tags: [projects]
+      security: [{ bearerAuth: [] }]
+    post:
+      summary: Create project
+      tags: [projects]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/projects/{project_id}:
+    get:
+      summary: Get project
+      tags: [projects]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/projects/{project_id}/tasks:
+    get:
+      summary: List tasks
+      tags: [tasks]
+      security: [{ bearerAuth: [] }]
+    post:
+      summary: Create task
+      tags: [tasks]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/tasks/{task_id}:
+    get:
+      summary: Get task
+      tags: [tasks]
+      security: [{ bearerAuth: [] }]
+    patch:
+      summary: Update task
+      tags: [tasks]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/tasks/{task_id}/comments:
+    get:
+      summary: List comments
+      tags: [comments]
+      security: [{ bearerAuth: [] }]
+    post:
+      summary: Create comment
+      tags: [comments]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/analytics/overview:
+    get:
+      summary: Analytics overview
+      tags: [analytics]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/feature-flags:
+    get:
+      summary: Feature flags
+      tags: [config]
+
+  /api/v1/me/teams:
+    get:
+      summary: List my team memberships
+      tags: [teams]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/webhooks:
+    get:
+      summary: List webhooks
+      tags: [webhooks]
+      security: [{ bearerAuth: [] }]
+    post:
+      summary: Create webhook
+      tags: [webhooks]
+      security: [{ bearerAuth: [] }]
+
+  /api/v1/tasks/{task_id}/attachments:
+    get:
+      summary: List attachments
+      tags: [attachments]
+      security: [{ bearerAuth: [] }]
+    post:
+      summary: Create attachment (S3 stub)
+      tags: [attachments]
+      security: [{ bearerAuth: [] }]
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
